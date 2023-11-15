@@ -14,6 +14,7 @@ class _S5331State extends State<S5331> {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             IconButton(
               onPressed: () async {
