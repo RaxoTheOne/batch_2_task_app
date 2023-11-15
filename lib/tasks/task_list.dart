@@ -1,8 +1,5 @@
 import 'package:task_app/private/features/tasks/data/tasks.dart';
 import 'package:task_app/private/features/tasks/models/task.dart';
-import 'package:task_app/solutions/chapter_4/subchapter_5/lesson_1/s_4_5_1_1.dart';
-import 'package:task_app/solutions/chapter_4/subchapter_5/lesson_2/s_4_5_2_1.dart';
-
 import '../solutions/solutions.dart';
 
 const List<Task> chapter3TaskList = [
