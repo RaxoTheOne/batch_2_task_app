@@ -1,5 +1,6 @@
 import 'package:task_app/private/features/tasks/data/tasks.dart';
 import 'package:task_app/private/features/tasks/models/task.dart';
+import 'package:task_app/solutions/chapter_4/subchapter_5/lesson_1/s_4_5_1_1.dart';
 
 const List<Task> chapter3TaskList = [
   Task(
@@ -38,7 +39,7 @@ const List<Task> chapter3TaskList = [
 const List<Task> chapter4TaskList = [
   Task(
     taskModel: t_4_5_1_1,
-    //solution: S4511(),
+    solution: S4511(),
   ),
   Task(
     taskModel: t_4_5_2_1,
