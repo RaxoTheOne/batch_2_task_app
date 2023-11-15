@@ -5,7 +5,7 @@ class S4521 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Text('Hello World'),
+      child: const Text('Hello World'),
     );
   }
 }
