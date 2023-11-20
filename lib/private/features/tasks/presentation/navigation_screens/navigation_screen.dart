@@ -31,7 +31,7 @@ class NavigationScreen extends StatelessWidget {
   final Widget Function(Task) routeWidgetFunction;
   final bool showAppBarIcon;
   const NavigationScreen({
-    Key? key,
+    super.key,
     required this.navigationScreenType,
     required this.scaffoldTitle,
     required this.progressTitle,
@@ -41,7 +41,7 @@ class NavigationScreen extends StatelessWidget {
     required this.tileTextFunction,
     required this.routeWidgetFunction,
     this.showAppBarIcon = false,
-  }) : super(key: key);
+  });
   @override
   Widget build(BuildContext context) {
     return Scaffold(

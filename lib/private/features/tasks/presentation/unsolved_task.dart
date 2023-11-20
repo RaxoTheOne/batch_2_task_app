@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class UnsolvedTask extends StatelessWidget {
-  const UnsolvedTask({Key? key}) : super(key: key);
+  const UnsolvedTask({super.key});
   @override
   Widget build(BuildContext context) {
     return Center(

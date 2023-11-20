@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
 class S5331 extends StatefulWidget {
-  const S5331({Key? key}) : super(key: key);
+  const S5331({super.key});
   @override
   State<S5331> createState() => _S5331State();
 }

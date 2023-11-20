@@ -7,7 +7,7 @@ class TaskScreen extends StatelessWidget {
   final Task task;
   static const routeName = '/TaskScreen';
 
-  const TaskScreen({Key? key, required this.task}) : super(key: key);
+  const TaskScreen({super.key, required this.task});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
