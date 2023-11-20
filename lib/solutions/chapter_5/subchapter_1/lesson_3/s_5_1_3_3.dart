@@ -11,10 +11,10 @@ class S5133 extends StatelessWidget {
         borderRadius: BorderRadius.circular(10),
         boxShadow: [
           BoxShadow(
-            color: Colors.grey.withOpacity(0.5), // Die Farbe und Opazität des Schattens
+            color: const Color.fromARGB(255, 75, 74, 74).withOpacity(0.5), // Die Farbe und Opazität des Schattens
             spreadRadius: 5, // Die Ausbreitung des Schattens
             blurRadius: 7, // Die Unschärfe des Schattens
-            offset: const Offset(0, 3), // Die Verschiebung des Schattens
+            offset: const Offset(0, 10), // Die Verschiebung des Schattens
           ),
         ],
       ),
@@ -25,7 +25,7 @@ class S5133 extends StatelessWidget {
         padding: const EdgeInsets.all(10), // Setze einen Innenabstand von 10 Pixeln
         width: 200, // Setze eine Breite von 200 Pixeln
         height: 200, // Setze eine Höhe von 100 Pixeln
-        color: Colors.blue, // Setze eine Hintergrundfarbe von Blau
+        color: const Color.fromARGB(255, 0, 140, 255), // Setze eine Hintergrundfarbe von Blau
         child: const Text(
           'This is a stylish container with a shadow, rounded corners, padding, background color and a text content.', // Setze einen Textinhalt
           style: TextStyle(
