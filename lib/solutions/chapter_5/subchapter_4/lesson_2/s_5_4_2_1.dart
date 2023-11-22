@@ -24,7 +24,8 @@ class _S5421State extends State<S5421> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Expanded(
+        Container(
+          height: 200, // Anpassen Sie die Höhe nach Bedarf
           child: ListView.builder(
             itemCount: begriffe.length,
             itemBuilder: (context, index) {
