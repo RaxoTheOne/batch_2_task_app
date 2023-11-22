@@ -41,24 +41,30 @@ class _S5421State extends State<S5421> {
             controller: _controller,
             keyboardType: TextInputType.number,
             onChanged: (value) {
-              try {
-                int index = int.parse(value);
-                if (index >= 0 && index < begriffe.length) {
-                  setState(() {
-                    selectedIdx = index;
-                  });
-                } else {
+              if (value.isNotEmpty) {
+                try {
+                  int index = int.parse(value);
+                  if (index >= 0 && index < begriffe.length) {
+                    setState(() {
+                      selectedIdx = index;
+                    });
+                  } else {
+                    setState(() {
+                      selectedIdx = -1;
+                    });
+                    zeigeFehlermeldung('Index außerhalb des Bereichs');
+                  }
+                } catch (e) {
                   setState(() {
                     selectedIdx = -1;
                   });
-                  zeigeFehlermeldung('Index außerhalb des Bereichs');
+                  zeigeFehlermeldung('Keine gültige Zahl');
+                  print('Fehler beim Parsen der Eingabe: $e');
                 }
-              } catch (e) {
+              } else {
                 setState(() {
                   selectedIdx = -1;
                 });
-                zeigeFehlermeldung('Keine gültige Zahl');
-                print('Fehler beim Parsen der Eingabe: $e');
               }
             },
             decoration: InputDecoration(
