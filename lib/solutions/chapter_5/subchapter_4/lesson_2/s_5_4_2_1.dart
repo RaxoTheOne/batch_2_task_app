@@ -27,6 +27,7 @@ class _S5421State extends State<S5421> {
         Container(
           height: 200, // Anpassen Sie die Höhe nach Bedarf
           child: ListView.builder(
+            shrinkWrap: true,
             itemCount: begriffe.length,
             itemBuilder: (context, index) {
               return ListTile(
