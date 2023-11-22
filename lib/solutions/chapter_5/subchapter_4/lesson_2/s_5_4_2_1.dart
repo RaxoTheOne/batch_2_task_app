@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class S5421 extends StatefulWidget {
-  const S5421({Key? key}) : super(key: key);
+  const S5421({super.key});
 
   @override
   _S5421State createState() => _S5421State();
@@ -53,7 +53,7 @@ class _S5421State extends State<S5421> {
                     setState(() {
                       selectedIdx = -1;
                     });
-                    zeigeFehlermeldung('Index außerhalb des Bereichs');
+                    zeigeFehlermeldung("Index außerhalb des Bereichs");
                   }
                 } catch (e) {
                   setState(() {
