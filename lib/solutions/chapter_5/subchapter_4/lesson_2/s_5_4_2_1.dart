@@ -1,29 +1,16 @@
 import 'package:flutter/material.dart';
 
-class S5421 extends StatelessWidget {
+class S5421 extends StatefulWidget {
   const S5421({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return MyHomePage();
-  }
+  _S5421State createState() => _S5421State();
 }
 
-class MyHomePage extends StatefulWidget {
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
+class _S5421State extends State<S5421> {
   final List<String> begriffe = ['Begriff 1', 'Begriff 2', 'Begriff 3', 'Begriff 4', 'Begriff 5'];
+  TextEditingController _controller = TextEditingController();
   int selectedIdx = -1;
-  final TextEditingController _controller = TextEditingController();
-
-  void markiereEintrag(int index) {
-    setState(() {
-      selectedIdx = index;
-    });
-  }
 
   void zeigeFehlermeldung(String fehler) {
     ScaffoldMessenger.of(context).showSnackBar(
@@ -56,14 +43,20 @@ class _MyHomePageState extends State<MyHomePage> {
             onChanged: (value) {
               try {
                 int index = int.parse(value);
-                if (index < 0 || index >= begriffe.length) {
-                  markiereEintrag(-1);
-                  zeigeFehlermeldung('Index außerhalb des Bereichs');
+                if (index >= 0 && index < begriffe.length) {
+                  setState(() {
+                    selectedIdx = index;
+                  });
                 } else {
-                  markiereEintrag(index);
+                  setState(() {
+                    selectedIdx = -1;
+                  });
+                  zeigeFehlermeldung('Index außerhalb des Bereichs');
                 }
               } catch (e) {
-                markiereEintrag(-1);
+                setState(() {
+                  selectedIdx = -1;
+                });
                 zeigeFehlermeldung('Keine gültige Zahl');
                 print('Fehler beim Parsen der Eingabe: $e');
               }
