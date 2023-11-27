@@ -12,7 +12,7 @@ class _S5511State extends State<S5511> {
   int counter2 = 0;
 
   Future<void> warteKurz() async {
-    await Future.delayed(const Duration(milliseconds: 500));
+    await Future.delayed(const Duration(milliseconds: 250));
   }
 
   Future<void> asyncMethode1() async {
