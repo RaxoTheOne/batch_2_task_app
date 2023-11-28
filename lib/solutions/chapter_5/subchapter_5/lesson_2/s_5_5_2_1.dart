@@ -26,6 +26,7 @@ class _S5521State extends State<S5521> {
       setState(() {
         _progressValue = 1.0;
         _isButtonEnabled = true;
+        print('Fertig');
       });
     });
   }
