@@ -49,7 +49,7 @@ class _S5521State extends State<S5521> {
               width: 300,
               decoration: BoxDecoration(
                 border: Border.all(color: Colors.blue),
-                borderRadius: BorderRadius.circular(5),
+                borderRadius: BorderRadius.circular(20),
               ),
             ),
             Text(
