@@ -1,10 +1,5 @@
 import 'package:flutter/material.dart';
 
-FormattedTime formatSeconds(int seconds) {
-  // Lösung hier einfügen
-  throw UnimplementedError();
-}
-
 class FormattedTime {
   final int hours;
   final int minutes;
@@ -28,8 +23,20 @@ class FormattedTime {
     if (seconds > 0) {
       result += "$seconds Sekunden";
     }
-    return result;
+    return result.trim(); // Trim, um überflüssige Leerzeichen am Ende zu entfernen
   }
+}
+
+FormattedTime formatSeconds(int seconds) {
+  if (seconds < 0) {
+    throw ArgumentError("Negative Sekunden sind nicht erlaubt.");
+  }
+
+  int hours = seconds ~/ 3600;
+  int minutes = (seconds % 3600) ~/ 60;
+  int remainingSeconds = seconds % 60;
+
+  return FormattedTime(hours: hours, minutes: minutes, seconds: remainingSeconds);
 }
 
 class S3383 extends StatefulWidget {
@@ -67,13 +74,13 @@ class _S3383State extends State<S3383> {
         ElevatedButton(
           onPressed: () {
             final input = int.tryParse(_inputController.text);
-            if (input == null) {
+            if (input == null || input < 0) {
               setState(() {
                 output = null;
               });
               ScaffoldMessenger.of(context).showSnackBar(
                 const SnackBar(
-                  content: Text('Bitte eine Anzahl an Sekunden eingeben.'),
+                  content: Text('Bitte eine positive Anzahl an Sekunden eingeben.'),
                 ),
               );
               return;
