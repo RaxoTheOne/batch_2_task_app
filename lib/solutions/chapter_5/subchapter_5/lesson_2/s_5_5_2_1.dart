@@ -22,7 +22,7 @@ class _S5521State extends State<S5521> {
     });
 
     // Simuliere eine asynchrone Operation
-    Future.delayed(Duration(seconds: 3), () {
+    Future.delayed(Duration(seconds: 1), () {
       setState(() {
         _progressValue = 1.0;
         _isButtonEnabled = true;
