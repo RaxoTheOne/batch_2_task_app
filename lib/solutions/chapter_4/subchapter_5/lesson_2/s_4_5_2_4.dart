@@ -21,7 +21,7 @@ class _ShowHideNameWidgetState extends State<S4524> {
           onPressed: () {
             setState(() {
               if (_currentName.isEmpty) {
-                _currentName = 'Dein Name'; // Hier deinen Namen einfügen
+                _currentName = 'Benney Der Gott'; // Hier deinen Namen einfügen
                 _buttonText = 'Name verstecken';
               } else {
                 _currentName = '';
