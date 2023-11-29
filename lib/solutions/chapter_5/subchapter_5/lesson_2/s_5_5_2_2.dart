@@ -17,25 +17,23 @@ class _S5522State extends State<S5522> {
     });
 
     // Simuliere das Würfeln mit einer Verzögerung von 2 Sekunden
-    Future.delayed(Duration(seconds: 2))
-        .then((_) {
-          // Zufällig entscheiden, ob ein Fehler auftritt
-          bool hasError = Random().nextBool();
+    Future.delayed(Duration(seconds: 2)).then((_) {
+      // Zufällig entscheiden, ob ein Fehler auftritt
+      bool hasError = Random().nextBool();
 
-          if (hasError) {
-            throw Exception('Ein Fehler ist aufgetreten!');
-          } else {
-            int diceResult = Random().nextInt(6) + 1;
-            setState(() {
-              _resultText = 'Ergebnis: $diceResult';
-            });
-          }
-        })
-        .catchError((error) {
-          setState(() {
-            _resultText = 'Fehler: $error';
-          });
+      if (hasError) {
+        throw Exception('Ein Fehler ist aufgetreten!');
+      } else {
+        int diceResult = Random().nextInt(6) + 1;
+        setState(() {
+          _resultText = 'Ergebnis: $diceResult';
         });
+      }
+    }).catchError((error) {
+      setState(() {
+        _resultText = 'Fehler: $error';
+      });
+    });
   }
 
   @override
