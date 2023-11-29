@@ -1,13 +1,17 @@
 import 'dart:convert';
-
 import 'package:crypto/crypto.dart';
 import 'package:flutter/material.dart';
 
 /// This functions tries to hack a 4 digit PIN.
 /// It returns the PIN as a string.
 String hackPin() {
-  // Lösung hier einfügen
-  throw UnimplementedError();
+  for (int pin = 0; pin < 10000; pin++) {
+    String pinString = pin.toString().padLeft(4, '0'); // Formatierung auf 4 Stellen
+    if (_isPinCorrect(pinString)) {
+      return pinString;
+    }
+  }
+  return 'PIN nicht gefunden';
 }
 
 // ignore: unused_element

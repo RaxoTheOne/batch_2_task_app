@@ -6,6 +6,8 @@ import '../solutions/chapter_3/subchapter_3/s_3_3_8_3.dart';
 import '../solutions/chapter_3/subchapter_3/s_3_3_8_4.dart';
 import '../solutions/chapter_3/subchapter_3/s_3_3_8_5.dart';
 import '../solutions/chapter_3/subchapter_3/s_3_3_8_6.dart';
+import '../solutions/chapter_3/subchapter_3/s_3_3_8_7.dart';
+import '../solutions/chapter_3/subchapter_3/s_3_3_8_8.dart';
 import '../solutions/solutions.dart';
 
 const List<Task> chapter3TaskList = [
@@ -35,11 +37,11 @@ const List<Task> chapter3TaskList = [
   ),
   Task(
     taskModel: t_3_3_8_7,
-    // solution: S3387(),
+    solution: S3387(),
   ),
   Task(
     taskModel: t_3_3_8_8,
-    // solution: S3388(),
+    solution: S3388(),
   ),
 ];
 const List<Task> chapter4TaskList = [

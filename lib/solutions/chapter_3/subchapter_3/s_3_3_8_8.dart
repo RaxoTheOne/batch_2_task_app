@@ -1,8 +1,20 @@
 import 'package:flutter/material.dart';
 
-int multiplyAdvanced(int a, int b) {
-  // Lösung hier einfügen
-  throw UnimplementedError();
+int multiplyWithoutOperator(int a, int b) {
+  int result = 0;
+
+  // Falls b negativ ist, ändere die Reihenfolge von a und b
+  if (b < 0) {
+    int temp = a;
+    a = b;
+    b = temp;
+  }
+
+  for (int i = 0; i < b; i++) {
+    result += a;
+  }
+
+  return result;
 }
 
 class S3388 extends StatefulWidget {
@@ -64,7 +76,7 @@ class _S3388State extends State<S3388> {
               return;
             }
             setState(() {
-              output = multiplyAdvanced(input1, input2).toString();
+              output = multiplyWithoutOperator(input1, input2).toString();
             });
           },
           child: const Text('Multipliziere'),
