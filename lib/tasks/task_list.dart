@@ -5,6 +5,7 @@ import '../solutions/chapter_3/subchapter_3/s_3_3_8_2.dart';
 import '../solutions/chapter_3/subchapter_3/s_3_3_8_3.dart';
 import '../solutions/chapter_3/subchapter_3/s_3_3_8_4.dart';
 import '../solutions/chapter_3/subchapter_3/s_3_3_8_5.dart';
+import '../solutions/chapter_3/subchapter_3/s_3_3_8_6.dart';
 import '../solutions/solutions.dart';
 
 const List<Task> chapter3TaskList = [
@@ -30,7 +31,7 @@ const List<Task> chapter3TaskList = [
   ),
   Task(
     taskModel: t_3_3_8_6,
-    // solution: S3386(),
+    solution: S3386(),
   ),
   Task(
     taskModel: t_3_3_8_7,
