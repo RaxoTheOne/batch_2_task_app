@@ -6,7 +6,76 @@ class S5531 extends StatelessWidget {
   const S5531({super.key});
   @override
   Widget build(BuildContext context) {
-    throw UnimplementedError();
+    return RandomUserWidget(
+    );
+  }
+}
+
+class RandomUserWidget extends StatefulWidget {
+  @override
+  _RandomUserWidgetState createState() => _RandomUserWidgetState();
+}
+
+class _RandomUserWidgetState extends State<RandomUserWidget> {
+  late Future<RandomUser> futureRandomUser;
+
+  @override
+  void initState() {
+    super.initState();
+    futureRandomUser = fetchRandomUser();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return FutureBuilder<RandomUser>(
+        future: futureRandomUser,
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            // Zeige einen CircularProgressIndicator, während die Daten geladen werden.
+            return Center(
+              child: CircularProgressIndicator(),
+            );
+          } else if (snapshot.hasError) {
+            // Zeige ein Icon und einen IconButton für den Fehlerfall.
+            return Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    Icons.error,
+                    size: 50.0,
+                    color: Colors.red,
+                  ),
+                  SizedBox(height: 10.0),
+                  IconButton(
+                    icon: Icon(Icons.refresh),
+                    onPressed: () {
+                      setState(() {
+                        futureRandomUser = fetchRandomUser();
+                      });
+                    },
+                  ),
+                  Text('Fehler beim Laden des Benutzers.'),
+                ],
+              ),
+            );
+          } else {
+            // Zeige die Daten des geladenen Benutzers an.
+            return Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                CircleAvatar(
+                  radius: 50.0,
+                  backgroundImage: NetworkImage(snapshot.data!.imageUrl),
+                ),
+                SizedBox(height: 10.0),
+                Text('Vorname: ${snapshot.data!.firstName}'),
+                Text('Nachname: ${snapshot.data!.lastName}'),
+              ],
+            );
+          }
+        },
+      );
   }
 }
 

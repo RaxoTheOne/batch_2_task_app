@@ -186,7 +186,7 @@ const List<Task> chapter5TaskList = [
   ),
   Task(
     taskModel: t_5_5_3_1,
-    // solution: S5531(),
+    solution: S5531(),
   ),
 ];
 const List<Task> chapter6TaskList = [];
