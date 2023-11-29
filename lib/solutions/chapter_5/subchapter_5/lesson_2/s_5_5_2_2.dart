@@ -17,7 +17,8 @@ class _S5522State extends State<S5522> {
     });
 
     // Simuliere das Würfeln mit einer Verzögerung von 2 Sekunden
-    Future.delayed(Duration(seconds: 2)).then((_) {
+    Future.delayed(Duration(seconds: 2))
+    .then((_) {
       // Zufällig entscheiden, ob ein Fehler auftritt
       bool hasError = Random().nextBool();
 
