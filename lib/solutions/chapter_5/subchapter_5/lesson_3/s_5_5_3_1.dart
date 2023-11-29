@@ -45,7 +45,7 @@ class _RandomUserWidgetState extends State<RandomUserWidget> {
                   size: 50.0,
                   color: Colors.red,
                 ),
-                SizedBox(height: 10.0),
+                SizedBox(height: 30.0),
                 IconButton(
                   icon: Icon(Icons.refresh),
                   onPressed: () {
